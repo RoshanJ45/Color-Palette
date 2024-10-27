@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Arial', sans-serif;
+}
+body {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #f5f5f5;
+transition: background 0.5s;
+}
+.palette-container {
+display: grid;
+grid-template-columns: repeat(4, 60px);
+gap: 15px;
+padding: 20px;
+background: white;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.color-s {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+cursor: pointer;
+transition: transform 0.3s;
+}
+.color-s:hover {
+transform: scale(1.1);
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+<div class="palette-container">
+<div class="color-s" style="background: #FF6B6B;" data-color="#FF6B6B"></div>
+<div class="color-s" style="background: #FFD93D;" data-color="#FFD93D"></div>
+<div class="color-s" style="background: #6BCB77;" data-color="#6BCB77"></div>
+<div class="color-s" style="background: #4D96FF;" data-color="#4D96FF"></div>
+<div class="color-s" style="background: #A27B5C;" data-color="#A27B5C"></div>
+<div class="color-s" style="background: #845EC2;" data-color="#845EC2"></div>
+<div class="color-s" style="background: #FF9671;" data-color="#FF9671"></div>
+<div class="color-s" style="background: #2C3E50;" data-color="#2C3E50"></div>
+</div>
+<script>
+const swatches = document.querySelectorAll('.color-s');
+swatches.forEach(swatch => {
+swatch.addEventListener('click', () => {
+const color = swatch.getAttribute('data-color');
+document.body.style.backgroundColor = color;
+});
+});
+</script>
+</body>
+</html>
